@@ -18,7 +18,7 @@ def youtube_login(email,password):
 	op.add_argument('--headless')
 	op.add_argument('--disable-dev-shm-usage')
 	op.add_argument('--no-sandbox')
-	driver = webdriver.Chrome(executable_path= r'C:\Users\redi1\Desktop\Selenium-YT-Bot\chromedriver.exe')
+	driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), options=op)
 	driver.get('https://accounts.google.com/ServiceLogin?hl=en&continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3Fhl%3Den%26feature%3Dsign_in_button%26app%3Ddesktop%26action_handle_signin%3Dtrue%26next%3D%252F&uilel=3&passive=true&service=youtube#identifier')
 
 	driver.find_element_by_id('identifierId').send_keys(email)
@@ -99,12 +99,12 @@ def check_exists_by_xpath(driver,xpath):
 
 if __name__ == '__main__':
 # You should edit these lines=======
-	email = 'youremail@gmail.com'
-	password = 'passxxxxxxx'
+	email = 'rushmac899@gmail.com'
+	password = 'Pubg@899'
 # ==================================
 
 	urls = [
-	  'https://www.youtube.com/watch?v=Szww2_VqEKs&t',
+	  'https://youtu.be/tTnDCq2_kgg',
 	]
 	
 	inp = open("url.txt","r")
